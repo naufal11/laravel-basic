@@ -3,16 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Article;
 
 class ArticleController extends Controller
 {
     public function index()
     {
-        $articles = [
-            ['title'=> 'First title', 'subject'=> 'This is first content'],
-            ['title'=> 'Second title', 'subject'=> 'This is second content'],
-            ['title'=> 'Third title', 'subject'=> 'This is third content'],
-        ];
+        $articles = Article::simplePaginate(5);
 
         return view('article.index', compact('articles'));
     }

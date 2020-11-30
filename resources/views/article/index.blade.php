@@ -4,8 +4,16 @@
     <h1>Welcome to Index Page!</h1>
 
     @foreach ($articles as $article)
-        <p><strong> Title: {{ $article['title'] }} </strong></p>
-        <p>{{ $article['subject'] }}</p>
+        <div class="card mb-2">
+            <div class="card-body">
+                <h5 class="card-title"> Title: {{ $article['title'] }} </h5>
+                <p class="card-text">{{ $article['subject'] }}</p>
+            </div>
+        </div>
     @endforeach
+
+    <div>
+        {{ $articles->links() }}
+    </div>
 
 @endsection
