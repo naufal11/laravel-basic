@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Single</title>
+    <title>Article</title>
 </head>
 <body>
-    <h1>This is Page Single</h1>
+    @yield('content')
 </body>
 </html>

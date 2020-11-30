@@ -8,12 +8,17 @@ class ArticleController extends Controller
 {
     public function index()
     {
-        return view('test');
+        $articles = [
+            ['title'=> 'First title', 'subject'=> 'This is first content'],
+            ['title'=> 'Second title', 'subject'=> 'This is second content'],
+            ['title'=> 'Third title', 'subject'=> 'This is third content'],
+        ];
+
+        return view('article.index', compact('articles'));
     }
 
     public function show($slug)
     {
-        die($slug);
-        return view('single');
+        return view('article.single', compact('slug'));
     }
 }
