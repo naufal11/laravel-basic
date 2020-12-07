@@ -26,6 +26,17 @@ class ArticleController extends Controller
 
     public function store(Request $request)
     {
-        dd($request);
+        $request->validate([
+            'title' => 'bail|required|max:255',
+            'subject' => 'required',
+        ]);
+
+        $article = new Article;
+        
+        $article->title = $request->title;
+        $article->subject = $request->subject;
+        $article->save();
+
+        return redirect('/article');
     }
 }
