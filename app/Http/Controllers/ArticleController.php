@@ -13,9 +13,19 @@ class ArticleController extends Controller
 
         return view('article.index', compact('articles'));
     }
-
+    
     public function show($slug)
     {
         return view('article.single', compact('slug'));
+    }
+
+    public function create()
+    {
+        return view('article.create');
+    }
+
+    public function store(Request $request)
+    {
+        dd($request);
     }
 }

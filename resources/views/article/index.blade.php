@@ -2,6 +2,7 @@
 
 @section('content')
     <h1>Welcome to Index Page!</h1>
+    <a href="/article/create" class="btn btn-primary">New Article+</a>
 
     @foreach ($articles as $article)
         <div class="card mb-2">
