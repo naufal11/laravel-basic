@@ -9,7 +9,14 @@
 
     <title>Article</title>
 </head>
-<body class="container">
-    @yield('content')
+<body class="container mt-3">
+    <nav>
+        <a href="/article">Home</a>
+        <a href="/article/create">New Article+</a>
+    </nav>
+
+    <main>
+        @yield('content')
+    </main>
 </body>
 </html>
