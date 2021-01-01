@@ -39,4 +39,22 @@ class ArticleController extends Controller
 
         return redirect('/article');
     }
+
+    public function edit($id)
+    {
+        $article = Article::find($id);
+
+        return view('article.edit', compact('article'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $article = Article::find($id);
+        
+        $article->title = $request->title;
+        $article->subject = $request->subject;
+        $article->save();
+
+        return redirect('/article');
+    }
 }

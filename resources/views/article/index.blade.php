@@ -8,8 +8,9 @@
         @foreach ($articles as $article)
             <div class="card mb-2">
                 <div class="card-body">
-                    <h5 class="card-title"> Title: {{ $article['title'] }} </h5>
-                    <p class="card-text">{{ $article['subject'] }}</p>
+                    <h5 class="card-title"> Title: {{ $article->title }} </h5>
+                    <p class="card-text">{{ $article->subject }}</p>
+                    <a href="/article/{{ $article->id }}/edit" class="btn btn-primary">Edit</a>
                 </div>
             </div>
         @endforeach
