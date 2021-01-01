@@ -31,11 +31,18 @@ class ArticleController extends Controller
             'subject' => 'required',
         ]);
 
-        $article = new Article;
+        // * Standard assignment
+        //// $article = new Article;
         
-        $article->title = $request->title;
-        $article->subject = $request->subject;
-        $article->save();
+        //// $article->title = $request->title;
+        //// $article->subject = $request->subject;
+        //// $article->save();
+
+        // * Mass assignment
+        Article::create([
+            'title' => $request->title,
+            'subject' => $request->subject
+        ]);
 
         return redirect('/article');
     }
@@ -49,11 +56,16 @@ class ArticleController extends Controller
 
     public function update(Request $request, $id)
     {
-        $article = Article::find($id);
+        //// $article = Article::find($id);
         
-        $article->title = $request->title;
-        $article->subject = $request->subject;
-        $article->save();
+        //// $article->title = $request->title;
+        //// $article->subject = $request->subject;
+        //// $article->save();
+
+        Article::find($id)->update([
+            'title' => $request->title,
+            'subject' => $request->subject
+        ]);
 
         return redirect('/article');
     }
